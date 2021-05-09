@@ -41,9 +41,9 @@ werden und anschließend der von euch erstellte Task zum Kopieren des Artefakts.
 Erstellt einen eigenen Task mit der Bezeichnung _notify_, der nach erfolgreichem Build automatisch eine entsprechende Zeile
 in eine Log-Datei schreibt. Die Zeile könnte etwa wie folgt aussehen: _Build successfull: Sun May 09 13:18:36 CEST 2021_
 
-Macht euch zunutze, dass in einer `build.gradle` auch valides Java statt Groovy verwendet werden kann. Implemtiert daher
-im `build.gradle` einfach eine Klasse `Logger` mit einem Kosntruktor, der den Pfad der Datei, in die geschrieben werden soll
-entgegen nimmt und damit ein `File` Objekt erstellt. Implementiert in dieser Klasse außerdem eine Methode `public void log(String content)`
+Macht euch zunutze, dass in einer `build.gradle` auch valides Java statt Groovy verwendet werden kann. Implementiert daher
+im `build.gradle` einfach eine Klasse `Logger` mit einem Konstruktor, der den Pfad der Datei, in die geschrieben werden soll
+entgegennimmt, und damit ein `File` Objekt erstellt. Implementiert in dieser Klasse außerdem eine Methode `public void log(String content)`
 in der ihr einen beliebigen Inhalt in eine Zeile der Datei schreibt. Falls ihr nicht mehr direkt parat habt, wie man in Java
 in Dateien schreibt, könnt ihr euch an eine der unter dem folgenden Link beschriebenen Optionen orientieren: https://www.baeldung.com/java-write-to-file
 
@@ -51,13 +51,15 @@ Nachdem ihr die Klasse implementiert habt, definiert einen eigenen Task `logBuil
 `Logger` Klasse nutzen, um die o.a. Zeile zu loggen. 
 
 Definiert abschließend in der `build.gradle` mit `build.finalizedBy(logBuild)`, dass der _build_ Task stets vom Task _logBuild_
-beendet wird. Jedesmal wenn `.\gradlew build` sollte dann eine entsprechende Zeile in euere Log-File geschrieben werden. 
+beendet wird. Jedesmal wenn `.\gradlew build` aufgerufen wird, sollte dann eine entsprechende Zeile in euer Log-File geschrieben werden. 
 
 ## Hands-On
 Gradle wird vor allem als Build-Tool für die Entwicklung von Android Apps verwendet. Android Studio etwa nutzt Gradle zur
 Verwaltung des Build-Prozess. Mit Hilfe von Gradle lässt sich der Build-Prozess für Android Apps den eigenen Anforderungen
-entsprechend anpassen (siehe: https://developer.android.com/studio/build).Viele Open-Source Projekte für Android werden außerdem
-bei GitHub gehostet. Diese lassen sich "from Source" bauen, anpassen oder weiterentwickeln sowie auf dem eigenen Smartphone testweise ausführen.
+entsprechend anpassen (siehe: https://developer.android.com/studio/build). Viele Open-Source Projekte für Android werden außerdem
+bei GitHub gehostet. Diese lassen sich "from Source" bauen, anpassen oder weiterentwickeln sowie auf dem eigenen Smartphone
+testweise ausführen.
+
 ### Vanilla Music
 https://github.com/vanilla-music/vanilla  
 Vanilla Music ist ein GPLv3 lizensierter Musikplayer für Android der für eigene Zwecke weiterentwickelt werden kann.
