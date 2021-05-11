@@ -38,7 +38,7 @@ task buildAndCopyJar(type: Copy, dependsOn: build) {
 Mit `.\gradlew buildAndCopyJar` wird der Task aufgerufen, sodass zunächst alle Schritte einschließlich _build_-Task ausgeführt
 werden und anschließend der von euch erstellte Task zum Kopieren des Artefakts.
 ## Zusatzaufgabe
-Erstellt einen eigenen Task mit der Bezeichnung _notify_, der nach erfolgreichem Build automatisch eine entsprechende Zeile
+Erstellt einen eigenen Task mit der Bezeichnung `logBuild`, der nach erfolgreichem Build automatisch eine entsprechende Zeile
 in eine Log-Datei schreibt. Die Zeile könnte etwa wie folgt aussehen: _Build successfull: Sun May 09 13:18:36 CEST 2021_
 
 Macht euch zunutze, dass in einer `build.gradle` auch valides Java statt Groovy verwendet werden kann. Implementiert daher
