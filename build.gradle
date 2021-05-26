@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-ext.finalName = "sebas-gradle-app"
+ext.finalName = "NeueApp"
 
 group 'de.hsbo.fbg.kswe'
 version '0.0.1-SNAPSHOT'
@@ -26,7 +26,7 @@ dependencies {
 
 task buildAndCopyJar(type: Copy, dependsOn: build) {
     from './build/libs'
-    into './build/target'
+    into './build/EigenerBuildOrdner'
 }
 
 // Option 1: Erstellen einer Java-Klasse Logger.
